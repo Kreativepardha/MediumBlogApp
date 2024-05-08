@@ -21,10 +21,10 @@ export interface Blog{
 
 useEffect(()=>{
 
-    
+         const token = localStorage.getItem("token") || ""; 
     axios.get(`${BACKEND_URL}/api/v1/blog/${id}`,{
         headers: {
-            Authorization: localStorage.getItem("token")
+            Authorization: token
         }
     })
         .then(response=>{
