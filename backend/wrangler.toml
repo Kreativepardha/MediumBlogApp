@@ -2,8 +2,8 @@ name = "bloggapp"
 compatibility_date = "2023-12-01"
 
  [vars]
-DATABASE_URL=""
-JWT_SECRET=""
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiZGEyZmZkOTQtOTFmMS00YjQ2LWI4M2MtZTU3NjE5NzQ3N2FhIiwidGVuYW50X2lkIjoiNDFhNDg1MzI3ODcxNTAyODcxMGVmMGRhYjRiNTQwMzkxYjMyNmI4NzkzYWY4OWRkNjYxNGFhYTg2NzcxZmMyMSIsImludGVybmFsX3NlY3JldCI6IjMyZDA4MWVkLWEwNDItNDc2OC1hOTJjLTVjNDQ4YTE1ZWExYSJ9.h-wSVCKIlkZV-5Jbpy9p63R2lsDfTiH6CdLEJJgulR8"
+JWT_SECRET="klgnkwrnfop"
 
 # MY_VAR = "my-variable"
 
