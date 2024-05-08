@@ -23,7 +23,7 @@ useEffect(()=>{
 
         const storedTokenString = localStorage.getItem("token");
     const token = storedTokenString ? JSON.parse(storedTokenString).jwt : '';
-    axios.get(`${BACKEND_URL}/api/v1/blog/${id}`,{
+    axios.get(`${BACKEND_URL}/api/v1/blog/1`,{
         headers: {
             Authorization: token
         }
