@@ -27,12 +27,13 @@ export const Publish = ()=>{
                 setContent(e.target.value)
             }} />
             <button type="submit"  onClick={async()=>{
+        const jwtToken = JSON.parse(localStorage.getItem("token")).jwt;
               const response =   await axios.post(`${BACKEND_URL}/api/v1/blog/create`,{
                     title,
                     content
                 },{
                     headers:{
-                        Authorization:localStorage.getItem("token")
+                        Authorization:jwtToken
                     }
                 });
                 navigate(`/blog/${response.data.id}`)
