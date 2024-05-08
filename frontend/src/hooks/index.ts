@@ -18,10 +18,11 @@ export interface Blog{
     export const useBlog = ({id}:{id:string})=>{
         const[loading,setLoading] = useState(true);
         const [blog,setBlog] = useState<Blog>();
-
+        
 useEffect(()=>{
 
-         const token = localStorage.getItem("token") || ""; 
+        const storedTokenString = localStorage.getItem("token");
+    const token = storedTokenString ? JSON.parse(storedTokenString).jwt : '';
     axios.get(`${BACKEND_URL}/api/v1/blog/${id}`,{
         headers: {
             Authorization: token
@@ -51,9 +52,8 @@ useEffect(()=>{
         const [blogs,setBlogs] = useState<Blog[]>([]);
         
         useEffect(()=>{
-            const storedTokenString = localStorage.getItem("token");
-            const storedTokenObject = JSON.parse(storedTokenString);
-            const token = storedTokenObject?.jwt;
+                    const storedTokenString = localStorage.getItem("token");
+    const token = storedTokenString ? JSON.parse(storedTokenString).jwt : '';
             if(!token){
                 setLoading(false);
                 return;
