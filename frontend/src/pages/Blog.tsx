@@ -4,12 +4,14 @@ import { Fullblog } from "../components/Fullblog";
 import { Skeleton } from "../components/Skeleton";
 
 export const Blog = () =>{
-    const {id} =useParams();
-     const {loading,blog} = useBlog({
-            id: id || ""
-    });
-    if(loading){
+
+    const {  id   } = useParams();
+     const {loading, blog} = useBlog({ 
+        id:id || "1"
+      });
+    if(loading || !blog){
         return <div>
+
             <Skeleton />
             <Skeleton />
         
