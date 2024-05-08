@@ -17,8 +17,9 @@ async function sendRequest(){
  try {
          const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type === "signup" ? "signup" :"signin"}`,postInputs)
         const jwt = response.data;
-        localStorage.setItem("token",jwt);
-        navigate("/blogs");
+       const token = localStorage.setItem("token",JSON.stringify(jwt));
+        console.log("Retrieved token:", token);
+        navigate(type === "signup" ? "/signin" : "/blogs");
  
     } catch (e) {
     alert("Error while signing in")
@@ -26,12 +27,7 @@ async function sendRequest(){
 }
 
 
-
-
-
-
-
-    return <div className="h-screen flex justify-center flex-col">
+return <div className="h-screen flex justify-center flex-col">
         <div className="flex justify-center">
             <div>
 
