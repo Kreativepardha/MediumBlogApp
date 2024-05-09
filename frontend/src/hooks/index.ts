@@ -7,7 +7,7 @@ export interface Blog{
     
         "content": string;
         "title": string;
-        "id":number
+        "id":number;
         "author": {
             "name": string;
         }
@@ -23,7 +23,7 @@ useEffect(()=>{
 
         const storedTokenString = localStorage.getItem("token");
     const token = storedTokenString ? JSON.parse(storedTokenString).jwt : '';
-    axios.get(`${BACKEND_URL}/api/v1/blog/1`,{
+    axios.get(`${BACKEND_URL}/api/v1/blog/${id}`,{
         headers: {
             Authorization: token
         }
